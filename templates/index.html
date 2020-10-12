@@ -1,0 +1,121 @@
+{% extends 'base.html'%}
+
+
+{% block head %}
+<style>
+		#wgtmsr {
+			width: 100px;
+		}
+
+
+
+		td{
+			height:10px;
+			text-align: center;
+			font-family:Sans-serif;
+			font-size:20px;
+			color:white;
+		}
+
+
+		span{
+			color :
+
+		}
+
+	</style>
+
+{% endblock %}
+
+{% block body %}
+
+<div class="row">
+    <div class="col-sm-4 text-white" style="">
+        <div class="container rounded" style="padding: 10px; opacity:0.9;background:#2C3E50;">
+  <form action="/predict" method="post" class="border border-dark" style="padding:40px">
+      <h2 style="text-align:center">Booking Details</h2>
+      <hr>
+      <div class="row register-form">
+          <div class="col-sm-6">
+    <div class="form-group">
+      <label for="lead_time">Lead Time:</label>
+      <input type="number" value="0" class="form-control" id="lead_time" placeholder="Enter lead time" name="lead_time" required>
+    </div>
+
+      <div class="form-group">
+      <label for="previous_cancellations">Previous Cancellations:</label>
+      <input type="number" value="0" class="form-control" id="previous_cancellations" placeholder="previous cancellations" name="previous_cancellations" required>
+    </div>
+
+      <div class="form-group">
+      <label for="previous_bookings_not_canceled">Previous Bookings:</label>
+      <input type="number" value="0" class="form-control" id="previous_bookings_not_canceled" placeholder="Not canceled" name="previous_bookings_not_canceled" required>
+    </div>
+  <div class="form-group">
+      <label for="booking_changes">Booking Changes:</label>
+      <input type="number" value="0" class="form-control" id="booking_changes" placeholder="Booking Changes" name="booking_changes" required>
+    </div>
+
+
+        <div class="form-group">
+      <label for="agent">Agent:</label>
+      <input type="number" value="0" class="form-control" id="agent" placeholder="Enter agent" name="agent" required>
+    </div>
+                <div class="form-group">
+      <label for="booking_date">Booking Date:</label>
+      <input type="date" class="form-control" id="booking_date" placeholder="date" name="booking_date" required>
+    </div>
+              <div class="form-group">
+      <label for="number_of_days">Number Of Nights:</label>
+      <input type="number" value="0" class="form-control" id="number_of_days" placeholder="Number of Night" name="number_of_days" required>
+    </div>
+    </div>
+          <div class="col-sm-6">
+        <div class="form-group">
+      <label for="days_in_waiting_list">Days in waiting list:</label>
+      <input type="number" value="0" class="form-control" id="days_in_waiting_list" placeholder="Enter days" name="days_in_waiting_list" required>
+    </div>
+
+      <div class="form-group">
+      <label for="adr">ADR:</label>
+      <input type="number" value="0" class="form-control" id="adr" placeholder="Enter ADR" name="adr">
+    </div>
+
+       <div class="form-group">
+      <label for="total_of_special_requests">Total of special requests:</label>
+      <input type="number" value="0" class="form-control" id="total_of_special_requests" placeholder="Special Requests" name="total_of_special_requests" required>
+    </div>
+
+     <div class="form-group">
+      <label for="required_car_parking_spaces">required car parking spaces:</label>
+      <input type="number" value="0" class="form-control" id="required_car_parking_spaces" placeholder="parking spaces" name="required_car_parking_spaces" required>
+    </div>
+              <div class="form-group">
+      <label for="adults">Adults Count:</label>
+      <input type="number" value="0" class="form-control" id="adults" placeholder="Adults" name="adults" required>
+    </div>
+              <div class="form-group">
+      <label for="children">Children Count:</label>
+      <input type="number" value="0" class="form-control" id="children" placeholder="Children" name="children" required>
+    </div>
+              <div class="form-group">
+      <label for="babys">Babys:</label>
+      <input type="number" value="0" class="form-control" id="babys" placeholder="Babys" name="babys" required>
+    </div>
+               <button type="submit" class="btn btn-success inline">Submit</button>
+          </div>
+
+          </div>
+  </form>
+</div>
+    </div>
+    <div class="col-sm-8" >
+        <div class="rounded" style="background:#2C3E50;height:100%;">
+            {% block conn %}
+         {% endblock %}
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
